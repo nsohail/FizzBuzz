@@ -1,35 +1,41 @@
-$(document).ready(function(){
-	$('.submit').click(function(){
-		var userEntry=$('#fizzEntry').val();
-		validateEntry(userEntry);
-	});
 
+$(document).ready(function(){
+
+
+	
+
+	var fizzGame=function(){
+
+	$('#data p').remove();
+	var userEntry=$('#fizzEntry').val();
+
+		if(userEntry > 100 || userEntry < 0){
+			alert("Enter a number from 1 to 100");
+			return false;
+	}
+		else{
+			for(i=1;i<=userEntry;i++){
+
+		if(i%3===0){
+			$('#data').append("<p>fizz</p>");
+		}else if(i%5===0){
+			$('#data').append("<p>buzz</p>");
+		}else if(i%3 && i%5 ===0){
+			$('#data').append("<p>fizz buzz</p>");
+		}
+		else {
+			$('#data').append('<p></p>'+i+'<p></p>');
+		}
+		}
+
+	}
+	
+
+	$('#fizzEntry').val('');
+};//end function fizzGame
+
+$('.submit').click(function(){
+	fizzGame();
 });
 
-
-var validateEntry=function(x){
-	if(x>100 || x<0){
-		alert("NO!");
-	}
-	else{
-		$('#data p').remove();
-		populateEntry(userEntry);
-	}
-};
-
-var populateEntry=function(number){
-	for(i=1;i<=number;i++){
-
-	if(i%3===0){
-		$('#data').append("<p>fizz</p>");
-	}else if(i%5===0){
-		$('#data').append("<p>buzz</p>");
-	}else if(i%3 && i%5 ===0){
-		$('#data').append("<p>fizz buzz</p>");
-	}
-	else {
-		$('#data').append('<p></p>'+i+'<p></p>');
-	}
-	}
-
-};
+});//end document ready
