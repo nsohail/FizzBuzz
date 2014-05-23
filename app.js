@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$('#data p').remove();
 	var userEntry=$('#fizzEntry').val();
-		if(userEntry > 100){
+		if(userEntry > 100 || userEntry < 0){
 			alert("Enter a number from 1 to 100");
 			return false;
 		}
