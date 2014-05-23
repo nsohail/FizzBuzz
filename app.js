@@ -2,14 +2,15 @@
 $(document).ready(function(){
 
 
-	
 
 	var fizzGame=function(){
 
+
 	$('#data p').remove();
 	var userEntry=$('#fizzEntry').val();
+	
 
-		if(userEntry > 100 || userEntry < 0){
+		if(userEntry > 100 || userEntry <= 0 || isNaN(userEntry) || userEntry===""){
 			alert("Enter a number from 1 to 100");
 			return false;
 	}
