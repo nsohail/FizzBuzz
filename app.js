@@ -1,19 +1,18 @@
 $(document).ready(function(){
 
-	var userEntry=$('#fizzEntry').val();
-	$('#data p').remove();
+
+	
 
 	var fizzGame=function(){
-		if(userEntry > 5){
+
+	$('#data p').remove();
+	var userEntry=$('#fizzEntry').val();
+		if(userEntry > 100){
 			alert("Enter a number from 1 to 100");
-			//return false;
-		}
-		else{
-			alert('yay');
-			//evalFunction(userEntry);
+			return false;
 		}
 
-	for(i=1;i<=100;i++){
+		for(i=1;i<=100;i++){
 
 	if(i%3===0){
 		$('#data').append("<p>fizz</p>");
@@ -25,14 +24,13 @@ $(document).ready(function(){
 	else {
 		$('#data').append('<p></p>'+i+'<p></p>');
 	}
-
 	}
-};
+
+	userEntry=('');
+};//end function fizzGame
 
 $('.submit').click(function(){
 	fizzGame();
-
 });
 
-});//end of document ready function
-
+});//end document ready
