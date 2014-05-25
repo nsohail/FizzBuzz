@@ -1,42 +1,40 @@
 
 $(document).ready(function(){
 
-
-
-	var fizzGame=function(){
-
-
-	$('#data p').remove();
-	var userEntry=$('#fizzEntry').val();
-	
-
-		if(userEntry > 100 || userEntry <= 0 || isNaN(userEntry) || userEntry===""){
-			alert("Enter a number from 1 to 100");
-			return false;
+$('.fizzEntry').click(function(){
+var input=prompt('Please enter a number from 0 to 100');
+	if(inputNumber(input)){
+		addNumber(input);
 	}
-		else{
-			for(i=1;i<=userEntry;i++){
 
-		if(i%3===0){
-			$('#data').append("<p>fizz</p>");
-		}else if(i%5===0){
-			$('#data').append("<p>buzz</p>");
-		}else if(i%3 && i%5 ===0){
-			$('#data').append("<p>fizz buzz</p>");
-		}
-		else {
-			$('#data').append('<p></p>'+i+'<p></p>');
-		}
-		}
-
-	}
-	
-
-	$('#fizzEntry').val('');
-};//end function fizzGame
-
-$('.submit').click(function(){
-	fizzGame();
 });
 
-});//end document ready
+});//document ends here
+
+
+function inputNumber(input){
+	if(input > 100 || input <= 0 || isNaN(input) || input===""){
+		alert('Enter a number from 1 to 100');
+		return false;
+	}
+	return true;
+}
+
+
+function addNumber(limit){
+	$('#data p').remove();
+	for(i=1;i<=limit;i++){
+
+		if(i%3 && i%5 ===0){
+			$('#data').append("<p>fizz buzz</p>").addClass('.fizz_buzz');
+		}else if(i%5===0){
+			$('#data').append("<p>buzz</p>");
+		}else if(i%3===0){
+			$('#data').append("<p>fizz</p>");
+		}
+		else {
+			$('#data').append('<p>'+i+'</p>');
+		}
+	
+	}
+}
