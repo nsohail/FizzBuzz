@@ -32,7 +32,7 @@ header p{
 	border:solid 1px blue;
 }
 
-p .fizz_buzz{
+.fizz_buzz{
 	border:solid 1px green;
 	background-color: green;
 }

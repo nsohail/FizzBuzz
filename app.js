@@ -23,8 +23,41 @@ function inputNumber(input){
 
 function addNumber(limit){
 	$('#data p').remove();
-	for(i=1;i<=limit;i++){
+	for(var i=1;i<=limit;i++){
 
+		classStyle=[];
+
+	if(i%3 && i%5 ===0){
+			value="fizz buzz";
+			classStyle.push("fizz_buzz");
+		}
+		else if(i%5===0){
+			value="buzz";
+			classStyle.push("buzz");
+		}
+		else if(i%3===0){
+			value="fizz";
+			classStyle.push("fizz");
+		}
+		else {
+			value=i;
+			classStyle.push("plain");
+		}
+
+		$('#data').append(
+			$('<p>'),
+			{class:classStyle.join(" ")}).text(value);
+
+}
+
+}
+
+
+
+
+
+
+/*
 		if(i%3 && i%5 ===0){
 			$('#data').append("<p>fizz buzz</p>").addClass('.fizz_buzz');
 		}else if(i%5===0){
@@ -38,3 +71,5 @@ function addNumber(limit){
 	
 	}
 }
+
+*/
