@@ -44,9 +44,11 @@ function addNumber(limit){
 			classStyle.push("plain");
 		}
 
-		$('#data').append(
-			$('<p>'),
-			{class:classStyle.join(" ")}).text(value);
+		var attach=$('<p>' ,{class:classStyle.join(' ')}).text(value);
+		$('#data').append(attach);
+
+
+		
 
 }
 
