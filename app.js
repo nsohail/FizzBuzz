@@ -27,7 +27,7 @@ function addNumber(limit){
 
 		classStyle=[];
 
-	if(i%3 && i%5 ===0){
+	if(i%3===0 && i%5 ===0){
 			value="fizz buzz";
 			classStyle.push("fizz_buzz");
 		}
